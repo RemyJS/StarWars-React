@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'starwars';
+  src: url(../../assets/fonts/Starjout.ttf) format('truetype'); 
+}
+@font-face {
+  font-family: 'deathstar';
+  src: url(../../assets/fonts/DeathStar.ttf) format('truetype'); 
+}
+@font-face {
+  font-family: 'alien';
+  src: url(../../assets/fonts/AlienRegular.otf) format('opentype'); 
+}
+@font-face {
+  font-family: 'alienbold';
+  src: url(../../assets/fonts/AlienBold.otf) format('opentype'); 
+}
+
+$bg-block: #313131;
+
+html {
+  font-size: 16px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.app {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.block {
+  background-color: $bg-block;
+  padding: 15px 30px;
+  border: 2px inset;
+  border-radius: 20px;
+}
+
+.row {
+  margin: 30px 0;
+  justify-content: space-around;
+}

@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 5% 10%;
+  align-items: center;
+  
+  &__logo{
+    font-family: 'starwars';
+    font-weight: bold;
+  }
+  &__list{
+    display: flex;
+    justify-content: space-around;
+    &_item{
+      font-family: 'alienbold';
+      font-size: 1.3rem;
+      margin: 0 10%;
+    }
+  }
+}

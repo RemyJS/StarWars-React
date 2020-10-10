@@ -1,0 +1,22 @@
+.card{
+  border: 2px inset;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 470px;
+  width: 400px;
+  &-passport {
+    display: flex;
+    margin: 15px 0;
+  }
+  &-img{
+    width: 200px;
+    height: auto;
+    padding: 25px;
+    border-radius: 25px;
+    padding: 10px;
+  }
+  &-subtitle {
+    font-family: 'alienbold';
+    text-align: center;
+  }
+}
