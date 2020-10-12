@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ErrorMsg from "../error-msg";
 
 import "./item-details.scss";
 
@@ -15,6 +16,8 @@ export default class ItemDetails extends Component {
   state = {
     item: null,
     image: null,
+    isError: false,
+    textError: null,
   };
 
   componentDidMount() {
@@ -26,7 +29,7 @@ export default class ItemDetails extends Component {
       this.updateItem();
     }
   }
-
+  
   updateItem() {
     const { selectedId: id, getData, getImage } = this.props;
     if (!id) return;
@@ -38,11 +41,33 @@ export default class ItemDetails extends Component {
           image: getImage(id),
         });
       })
-      .catch((e) => console.log(e));
+      .catch((e) => this.catchError(e));
   }
 
+
+  componentDidCatch(){
+    this.setState({
+     isError: true,
+    })
+  }
+
+  catchError = (err) => {
+    this.setState({
+      isError: true,
+      textError: err.toString(),
+    });
+  };
+
   render() {
-    const { item, image } = this.state;
+    const { item, image, isError, textError } = this.state;
+    if (isError) {
+      return (
+        <div className="card mb-3">
+          <ErrorMsg textError={textError}/>
+        </div>
+      );
+    }
+
     if (!item) {
       return (
         <div className="card mb-3">
@@ -62,7 +87,8 @@ export default class ItemDetails extends Component {
             src={image}
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+              e.target.src =
+                "https://starwars-visualguide.com/assets/img/placeholder.jpg";
             }}
           />
           <ul className="list-group list-group-flush">

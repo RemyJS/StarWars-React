@@ -6,8 +6,14 @@
   align-items: center;
   
   &__logo{
-    font-family: 'starwars';
-    font-weight: bold;
+    font-family: 'deathstar';
+    letter-spacing: 0.15rem;
+    a {
+      color:#fff;
+      &:hover {
+        color:#FFE81F;
+      }
+    }
   }
   &__list{
     display: flex;

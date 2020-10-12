@@ -1,0 +1,22 @@
+.jumbotron {
+  margin-top: 30px;
+}
+.film {
+  font-family: 'alien';
+  h1 {
+    font-family: 'deathStar';
+    font-size: 1.9rem;
+    letter-spacing: 0.15rem;
+    color: #FFE81F;
+  }
+  &_img {
+    max-width: 300px;
+    height: auto;
+    margin-right: 30px;
+    border: 2px inset;
+    border-radius: 15px;
+  }
+  .text-success {
+    font-family: 'alienBold';
+  }
+}

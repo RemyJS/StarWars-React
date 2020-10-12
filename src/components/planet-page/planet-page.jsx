@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ItemList from "../item-list";
 import ItemDetails, { Record } from "../item-details/item-details";
-import SwapiService from "../../services/swapi-service";
 
 export class PlanetPage extends Component {
   state = {

@@ -68,6 +68,15 @@ export default class SwapiService {
     return `${this._apiImage}vehicles/${id}.jpg`;
   }
 
+  getFilm = async (id) => {
+    const film = await this.getResource(`/films/${id}`);
+    return this._transphormFilm(film);
+  }
+
+  getFilmImage = (id) => {
+    return `${this._apiImage}films/${id}.jpg`;
+  }
+  
   _getId = (url) => {
     const reg = /\/([0-9]*)\/$/;
     return url.match(reg)[1];
@@ -129,4 +138,14 @@ export default class SwapiService {
       manufacturer: vehicle.manufacturer,
     };
   };
+
+  _transphormFilm = (film) => {
+    return {
+      title: film.title,
+      episode: film.episode_id,
+      release: film.release_date,
+      opening: film.opening_crawl,
+      director: film.director,
+    }
+  }
 }

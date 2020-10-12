@@ -12,6 +12,7 @@ export class RandomPlanet extends Component {
     planet: {},
     isLoading: true,
     isError: false,
+    textError: null,
   };
 
   componentDidMount() {
@@ -22,6 +23,21 @@ export class RandomPlanet extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+
+  
+  componentDidCatch(){
+    this.setState({
+     isError: true,
+    })
+  }
+
+  catchError = (err) => {
+    this.setState({
+      isLoading: false,
+      isError: true,
+      textError: err.toString(),
+    });
+  };
   
   updatePlanet = () => {
     const id = Math.floor(Math.random() * 17) + 2;
@@ -36,18 +52,12 @@ export class RandomPlanet extends Component {
     })
   }
 
-  catchError = (err) =>  {
-    console.log(err);
-    this.setState({
-      isError: true,
-      isLoading: false,
-    })
-  }
   render() {
     const {
       planet: { id, population, rotation, diameter, name },
       isLoading,
       isError,
+      textError,
     } = this.state;
 
     if (isLoading){
@@ -61,7 +71,7 @@ export class RandomPlanet extends Component {
     if(isError){
       return (
         <div className="randomPlanet block">
-          <ErrorMsg/>
+          <ErrorMsg textError={textError}/>
         </div>
       );
     }

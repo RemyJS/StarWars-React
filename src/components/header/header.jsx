@@ -1,17 +1,23 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import './header.scss';
+import "./header.scss";
 
 export default function header() {
   return (
-    <div className='header'>
-      <h2 className='header__logo'>Star Wars</h2>
-      <ul className='header__list'>
-        <li className='header__list_item'><a href="#">Peoples</a></li>
-        <li className='header__list_item'><a href="#">Planets</a></li>
-        <li className='header__list_item'><a href="#">Vehicles</a></li>
-        <li className='header__list_item'><a href="#">Starships</a></li>
+    <div className="header">
+      <h2 className="header__logo"><Link to='/'>Star Wars</Link></h2>
+      <ul className="header__list">
+        <li className="header__list_item">
+          <Link to="/people/">People</Link>
+        </li>
+        <li className="header__list_item">
+          <Link to="/planets/">Planets</Link>
+        </li>
+        <li className="header__list_item">
+          <Link to="/starships/">Starships</Link>
+        </li>
       </ul>
     </div>
-  )
+  );
 }
