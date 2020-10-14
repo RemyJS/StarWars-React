@@ -1,0 +1,21 @@
+.randomItem {
+  display: flex;
+  justify-content: space-evenly;
+  h3 {
+    font-family: 'alien';
+  }
+  &__img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 10px;
+    border: 2px inset;
+    border-radius: 20px;
+    object-fit: revert;
+  }
+
+  &__info{
+    font-family: 'alienBold';
+    font-size: 1.2rem;
+  }
+}

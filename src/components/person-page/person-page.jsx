@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import ItemList from "../item-list";
 import Person from "../person";
-import RandomPlanet from "../random-planet";
-import RandomPlaner from "../random-planet";
+import RandomItem, { RandomRecord } from "../random-item/random-item";
 
 export class PersonPage extends Component {
   state = {
@@ -15,22 +14,31 @@ export class PersonPage extends Component {
     });
   };
 
+  
+  randomPlanet = () => {
+    return Math.floor(Math.random() * 17 + 2);
+  }
+
   render() {
-    const { getAllPeople } = this.props.swapiService;
+    const { getAllPeople, getPlanet, getPlanetImage } = this.props.swapiService;
     return (
       <>
-        <RandomPlanet />
-        <div className="row lg-2">
-          <div className="col-mb-6">
+        <RandomItem
+          getData={getPlanet}
+          getImage={getPlanetImage}
+          getId={this.randomPlanet}
+        >
+          <RandomRecord label="Diameter: " field="diameter" />
+          <RandomRecord label="Rotation Period: " field="rotation" />
+          <RandomRecord label="Population: " field="population" />
+        </RandomItem>
+        <div className="row">
             <ItemList
               getData={getAllPeople}
               onSelected={this.onSelected}
               selectedId={this.state.selectedId}
             />
-          </div>
-          <div className="col-mb-6">
             <Person selectedPerson={this.state.selectedId} />
-          </div>
         </div>
       </>
     );

@@ -35,7 +35,7 @@ export default class Person extends Component {
     const { person, planet } = this.state;
     if (!person) {
       return (
-        <div className="card mb-3">
+        <div className="card md-3">
           <h5 className="card-header">Select a person from a list</h5>
         </div>
       );
@@ -52,7 +52,7 @@ export default class Person extends Component {
     } = person;
     const { name: PlanetName } = planet;
     return (
-      <div className="card mb-3">
+      <div className="card md-3">
         <h4 className="card-header bg-primary">{name}</h4>
         <div className="card-passport">
           <img

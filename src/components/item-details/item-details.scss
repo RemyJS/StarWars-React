@@ -2,7 +2,7 @@
   border: 2px inset;
   border-radius: 15px;
   overflow: hidden;
-  height: 470px;
+  min-height: 470px;
   width: 400px;
   &-passport {
     display: flex;

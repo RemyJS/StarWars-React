@@ -3,7 +3,6 @@ import Loading from "../loading";
 import ErrorMsg from '../error-msg'
 import SwapiService from "../../services/swapi-service";
 
-import "./random-planet.scss";
 
 export class RandomPlanet extends Component {
   swapiService = new SwapiService();
@@ -62,7 +61,7 @@ export class RandomPlanet extends Component {
 
     if (isLoading){
       return (
-        <div className="randomPlanet block">
+        <div className="randomItem block">
           <Loading />
         </div>
       );
@@ -70,22 +69,22 @@ export class RandomPlanet extends Component {
 
     if(isError){
       return (
-        <div className="randomPlanet block">
+        <div className="randomItem block">
           <ErrorMsg textError={textError}/>
         </div>
       );
     }
       
     return (
-      <div className="randomPlanet block">
+      <div className="randomItem block">
         <img
-          className="randomPlanet__img"
+          className="randomItem__img"
           src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
           alt="planet"
         />
-        <div className="randomPlanet__info">
-          <h3 className="randomPlanet__info__img">{name}</h3>
-          <ul className="randomPlanet__info__list">
+        <div className="randomItem__info">
+          <h3 className="text-success">{name}</h3>
+          <ul className="randomItem__info__list">
             <li>Population: {population}</li>
             <li>Rotation Period: {rotation}</li>
             <li>Diametr: {diameter}</li>

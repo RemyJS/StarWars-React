@@ -60,8 +60,8 @@ export default class SwapiService {
   };
 
   getVehicle  = async (id) => {
-    const starship = await this.getResource(`/vehicles/${id}`);
-    return this._transphormVehicle(starship);
+    const vehicle = await this.getResource(`/vehicles/${id}`);
+    return this._transphormVehicle(vehicle);
   };
 
   getVehicleImage = (id) => {
@@ -75,6 +75,15 @@ export default class SwapiService {
 
   getFilmImage = (id) => {
     return `${this._apiImage}films/${id}.jpg`;
+  }
+
+  getSpecies= async (id) => {
+    const species = await this.getResource(`/species/${id}`);
+    return this._transphormSpecies(species);
+  }
+
+  getSpeciesImage = (id) => {
+    return `${this._apiImage}species/${id}.jpg`;
   }
   
   _getId = (url) => {
@@ -148,4 +157,16 @@ export default class SwapiService {
       director: film.director,
     }
   }
+  
+  _transphormSpecies = (s) => {
+    const id = this._getId(s.url);
+    return {
+      id,
+      name: s.name,
+      class: s.classification,
+      designation: s.designation,
+      language: s.language,
+    }
+  }
+
 }

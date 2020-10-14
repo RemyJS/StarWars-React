@@ -4,7 +4,6 @@ import Header from "../header";
 import Films from "../films";
 import PersonPage from "../person-page/person-page";
 import PlanetPage from "../planet-page";
-import RandomPlanet from "../random-planet";
 import StarshipPage from "../starship-page";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./app.scss";
@@ -17,7 +16,6 @@ export default class App extends Component {
       <div className="app">
         <Router>
           <Header />
-          {/* <RandomPlanet /> */}
           <Route
             path="/"
             render={() => <Films swapiService={this.swapiService} />}
@@ -28,11 +26,11 @@ export default class App extends Component {
             render={() => <PersonPage swapiService={this.swapiService} />}
           ></Route>
           <Route
-            path="/planets"
+            path="/planets/"
             render={() => <PlanetPage swapiService={this.swapiService} />}
           ></Route>
           <Route
-            path="/starships"
+            path="/starships/"
             render={() => <StarshipPage swapiService={this.swapiService} />}
           ></Route>
         </Router>

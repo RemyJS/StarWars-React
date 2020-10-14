@@ -62,7 +62,7 @@ export default class ItemDetails extends Component {
     const { item, image, isError, textError } = this.state;
     if (isError) {
       return (
-        <div className="card mb-3">
+        <div className="card md-3">
           <ErrorMsg textError={textError}/>
         </div>
       );
@@ -70,7 +70,7 @@ export default class ItemDetails extends Component {
 
     if (!item) {
       return (
-        <div className="card mb-3">
+        <div className="card md-3">
           <h5 className="card-header">Select a item from a list</h5>
         </div>
       );
@@ -79,7 +79,7 @@ export default class ItemDetails extends Component {
     const { name } = item;
     const { footer, subtitile } = this.props;
     return (
-      <div className="card mb-3">
+      <div className="card md-3">
         <h4 className="card-header bg-primary">{name}</h4>
         <div className="card-passport">
           <img
