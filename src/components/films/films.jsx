@@ -70,19 +70,22 @@ export class Films extends Component {
             }}
           />
           <div className="film_info">
-            <h1>
-              Star Wars episode {episode}
-            </h1>
-            <h1>
-              {title}
-            </h1>
+            <h1>Star Wars episode {episode}</h1>
+            <h1>{title}</h1>
             <p className="lead text-info">{opening}</p>
             <hr className="my-4" />
-            <p className="lead text-success">
-              Director: {director}
-            </p>
-            <p className="text-warning">
-              Release date: {release}
+            <p className="lead text-success">Director: {director}</p>
+            <p className="text-warning">Release date: {release}</p>
+            <p class="lead contacts">
+              <a class="btn btn-primary btn-lg" href="https://www.linkedin.com/in/andreykorol2019/" role="button">
+                Linkedin
+              </a>
+              <a class="btn btn-secondary btn-lg" href="https://github.com/RemyJS/StarWars-React" role="button">
+                Github
+              </a>
+              <a class="btn btn-info btn-lg" href="https://t.me/Remy_lee" role="button">
+                Telegram
+              </a>
             </p>
           </div>
         </div>
