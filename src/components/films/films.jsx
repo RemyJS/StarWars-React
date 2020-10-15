@@ -76,14 +76,14 @@ export class Films extends Component {
             <hr className="my-4" />
             <p className="lead text-success">Director: {director}</p>
             <p className="text-warning">Release date: {release}</p>
-            <p class="lead contacts">
-              <a class="btn btn-primary btn-lg" href="https://www.linkedin.com/in/andreykorol2019/" role="button">
+            <p className="lead contacts">
+              <a className="btn btn-primary btn-lg" href="https://www.linkedin.com/in/andreykorol2019/" role="button">
                 Linkedin
               </a>
-              <a class="btn btn-secondary btn-lg" href="https://github.com/RemyJS/StarWars-React" role="button">
+              <a className="btn btn-secondary btn-lg" href="https://github.com/RemyJS/StarWars-React" role="button">
                 Github
               </a>
-              <a class="btn btn-info btn-lg" href="https://t.me/Remy_lee" role="button">
+              <a className="btn btn-info btn-lg" href="https://t.me/Remy_lee" role="button">
                 Telegram
               </a>
             </p>
