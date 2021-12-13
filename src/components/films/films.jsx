@@ -83,7 +83,7 @@ export class Films extends Component {
               <a className="btn btn-secondary btn-lg" href="https://github.com/RemyJS/StarWars-React" role="button">
                 Github
               </a>
-              <a className="btn btn-info btn-lg" href="https://t.me/Remy_lee" role="button">
+              <a className="btn btn-info btn-lg" href="https://t.me/" role="button">
                 Telegram
               </a>
             </p>
